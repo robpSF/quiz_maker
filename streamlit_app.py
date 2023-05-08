@@ -79,7 +79,7 @@ if go:
 
     #df = pd.read_csv(io.StringIO(AI_scenario))
 
-    csv_bytes = csv_string.encode('utf-8')
+    csv_bytes = AI_scenario.encode('utf-8')
     csv_bytes_io = BytesIO(csv_bytes)
 
     df = pd.read_csv(csv_bytes_io)
