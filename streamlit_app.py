@@ -4,6 +4,7 @@ import streamlit as sl
 import pandas as pd
 import io
 from io import BytesIO
+from xlsxwriter import Workbook
 
 openai.organization = sl.secrets["organization"]
 openai.api_key =  sl.secrets["key"]
