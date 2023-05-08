@@ -78,7 +78,12 @@ if go:
         #sl.write(AI_scenario)
 
     #df = pd.read_csv(io.StringIO(AI_scenario))
-    df = pd.read_csv(pd.compat.StringIO(csv_string))
+
+    csv_bytes = csv_string.encode('utf-8')
+    csv_bytes_io = BytesIO(csv_bytes)
+
+    df = pd.read_csv(csv_bytes_io)
+
     # insert a new column at the start of the dataframe
     df.insert(0, "Question_coding", quiz_code)
     sl.write(df)
